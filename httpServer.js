@@ -17,7 +17,6 @@
       'Connection': 'keep-alive',
       'Access-Control-Allow-Origin': '*'
     });
-
     switch (pathName) {
       case "/radio":
         {

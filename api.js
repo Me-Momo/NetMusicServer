@@ -151,6 +151,7 @@ var api = {
       });
       else {
         var datas = res.body.result.tracks;
+
         var songList = datas.map(function (item) {
           return that.transfer(item);
         });
@@ -183,8 +184,8 @@ var api = {
     var s = argv[0];
     var stype = argv[1] || 1;
     var offset = argv[2] || 0;
-    var total = argv[3] || 'true';
-    var limit = argv[4] || DEFAULTLIMIT;
+    var total = 'true';
+    var limit = argv[3] || DEFAULTLIMIT;
     var url = 'http://music.163.com/api/search/get/web';
     var data = {
       's': s,
@@ -214,6 +215,7 @@ var api = {
       else {
         var results = doc.result.songs;
         // callback(null, results);
+
         var songList = results.map(item => {
           return that.transfer(item);
         })
