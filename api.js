@@ -17,7 +17,7 @@ var customHeaders = {
 }
 
 var DEFAULTLIMIT = 20;
-var DEFAULTFILEPATH = 'log1.txt'; //文件路径
+
 //操作和node的不一样
 
 var httpRequest = function (method, url, data, callback) {
@@ -49,12 +49,12 @@ var httpRequest = function (method, url, data, callback) {
 
 
 
-var address = "http://music.163.com/api/radio/get";
+var baseUrl = baseUrl + "";
 
 var api = {
   radio: function (callback) {
     var that = this;
-    var url = 'http://music.163.com/api/radio/get';
+    var url = baseUrl + 'radio/get';
     httpRequest('get', url, null, function (err, res) {
       if (err) {
         callback({
@@ -79,7 +79,7 @@ var api = {
   },
   // 根据 songId 获取歌曲歌词
   songDetail: function (id, callback) {
-    var url = "http://music.163.com/api/song/detail";
+    var url = baseUrl + "song/detail";
     var that = this;
     httpRequest('get', url, {
       id: id,
@@ -106,7 +106,7 @@ var api = {
     })
   },
   songLyric: function (id, callback) {
-    var url = "http://music.163.com/api/song/lyric";
+    var url = baseUrl + "song/lyric";
     httpRequest('get', url, {
       os: 'android',
       id: id,
@@ -135,7 +135,7 @@ var api = {
   },
   playlistDetail: function (id, callback) {
     var that = this;
-    var url = 'http://music.163.com/api/playlist/detail';
+    var url = baseUrl + 'playlist/detail';
     var data = {
       "id": id || "422995334"
     }
@@ -186,7 +186,7 @@ var api = {
     var offset = argv[2] || 0;
     var total = 'true';
     var limit = argv[3] || DEFAULTLIMIT;
-    var url = 'http://music.163.com/api/search/get/web';
+    var url = baseUrl + 'search/get/web';
     var data = {
       's': s,
       'type': stype,
@@ -226,8 +226,3 @@ var api = {
 }
 
 module.exports = api;
-// test ok
-// api.radio();
-// ok NOTE:how to getSongId
-// api.songLyric('22754251')
-// api.songDetail('22754251')

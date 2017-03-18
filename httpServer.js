@@ -13,7 +13,7 @@
       .pathname;
     res.writeHead(200, {
       'Content-Type': 'text/json;charset=utf-8',
-      'Cache-Control': 'no-cache, must-revalidate',
+      'Cache-Control': 'max-age=60*60*24',
       'Connection': 'keep-alive',
       'Access-Control-Allow-Origin': '*'
     });
