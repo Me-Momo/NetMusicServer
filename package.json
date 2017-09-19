@@ -1,0 +1,32 @@
+{
+  "name": "net_music_server",
+  "version": "1.0.0",
+  "description": "网易云音乐API服务器",
+  "main": "httpServer.js",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "http": "^0.0.0",
+    "path": "^0.12.7",
+    "querystring": "^0.2.0",
+    "superagent": "^3.6.0",
+    "url": "^0.11.0",
+    "zlib": "^1.0.5"
+  },
+  "devDependencies": {},
+  "author": "kasmine <736929286@qq.com>",
+  "scripts": {
+    "start": "node httpServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Me-Momo/NetMusicServer.git"
+  },
+  "keywords": [
+    "API"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Me-Momo/NetMusicServer/issues"
+  },
+  "homepage": "https://github.com/Me-Momo/NetMusicServer#readme"
+}
